@@ -1,0 +1,200 @@
+20 1 0 0
+Histoire
+Quel peuple de l'Antiquite a construit les grandes pyramides de Gizeh ?
+3
+1.00
+Les Romains
+0
+Les Egyptiens
+1
+Les Grecs
+0
+En quelle annee a debute la Revolution francaise ?
+4
+1.00
+1492
+0
+1789
+1
+1815
+0
+1914
+0
+Qui s'est sacre premier empereur des Francais en 1804 ?
+4
+1.00
+Louis XIV
+0
+Charlemagne
+0
+Napoleon Bonaparte
+1
+Charles de Gaulle
+0
+Quel evenement marque traditionnellement le passage de la Prehistoire a l'Histoire ?
+3
+1.00
+La decouverte du feu
+0
+L'invention de l'ecriture
+1
+La construction des premiers villages
+0
+Quelle ville etait le coeur politique et la capitale de l'Empire romain ?
+4
+1.00
+Athenes
+0
+Paris
+0
+Constantinople
+0
+Rome
+1
+Quel navigateur a atteint les iles de l'Amerique en 1492 pour le compte de l'Espagne ?
+2
+1.00
+Vasco de Gama
+0
+Christophe Colomb
+1
+Durant quel conflit mondial s'est deroulee la terrible bataille de Verdun en 1916 ?
+4
+1.00
+La Premiere Guerre mondiale
+1
+La Seconde Guerre mondiale
+0
+La guerre franco-prussienne
+0
+La guerre de Cent Ans
+0
+Quel roi de France est mondialement connu sous le surnom de Roi-Soleil ?
+3
+1.00
+Francois Ier
+0
+Henri IV
+0
+Louis XIV
+1
+Quelle etait l'arme de poing en bois, utilisee par les chevaliers lors des joutes equestres ?
+3
+1.00
+L'epee
+0
+La lance
+1
+La hache
+0
+Quelle ville allemande a ete separee en deux par un mur de 1961 a 1989 ?
+4
+1.00
+Munich
+0
+Francfort
+0
+Berlin
+1
+Hambourg
+0
+Quelle heroine francaise a delivre la ville d'Orleans des Anglais pendant la guerre de Cent Ans ?
+2
+1.00
+Jeanne d'Arc
+1
+Olympe de Gouges
+0
+Dans quel pays d'Europe le grand mouvement de la Renaissance a-t-il pris naissance au XIVe siecle ?
+4
+1.00
+En France
+0
+En Espagne
+0
+En Angleterre
+0
+En Italie
+1
+Comment appelait-on les redoutables guerriers et navigateurs venus de Scandinavie au Moyen Age ?
+3
+1.00
+Les Huns
+0
+Les Vikings
+1
+Les Spartiates
+0
+En quelle annee la Seconde Guerre mondiale a-t-elle pris fin avec la capitulation de l'Allemagne ?
+4
+1.00
+1918
+0
+1939
+0
+1945
+1
+1953
+0
+Qui est le redacteur principal de la Declaration d'independance des Etats-Unis en 1776 ?
+3
+1.00
+George Washington
+0
+Thomas Jefferson
+1
+Abraham Lincoln
+0
+Quel regime politique, ou le roi possede tous les pouvoirs, dirigeait la France avant 1789 ?
+4
+1.00
+La Monarchie absolue
+1
+La Republique
+0
+L'Empire
+0
+La Democratie
+0
+Quel inventeur allemand a perfectionne l'imprimerie avec des caracteres mobiles en metal en 1450 ?
+3
+1.00
+Galileo Galilei
+0
+Johannes Gutenberg
+1
+Isaac Newton
+0
+Quel dictateur totalitaire etait en tete de l'Allemagne nazie pendant la Seconde Guerre mondiale ?
+4
+1.00
+Benito Mussolini
+0
+Joseph Staline
+0
+Adolf Hitler
+1
+Winston Churchill
+0
+Quelle periode historique est entre la chute de l'Empire romain et la decouverte de l'Amerique ?
+4
+1.00
+L'Antiquite
+0
+La Prehistoire
+0
+Le Moyen Age
+1
+L'Epoque contemporaine
+0
+Quel pays a reussi l'exploit d'envoyer les premiers hommes marcher sur la Lune en 1969 ?
+4
+1.00
+L'URSS
+0
+Les Etats-Unis
+1
+La Chine
+0
+Le Royaume-Uni
+0

@@ -1,0 +1,202 @@
+20 0 0 1
+Sport
+Quels pays organisent la Coupe du Monde de foot cet ete ? (Plusieurs reponses possibles)
+4
+1.00
+Etats-Unis
+1
+Canada
+1
+Bresil
+0
+Mexique
+1
+Quels clubs ont deja remporte la Ligue des Champions ? (Plusieurs reponses possibles)
+4
+1.00
+Real Madrid
+1
+Manchester City
+1
+Lyon
+0
+Paris Saint-Germain
+1
+Combien de joueurs par equipe sont sur le terrain au debut d'un match de foot ?
+3
+1.00
+7 joueurs
+0
+11 joueurs
+1
+15 joueurs
+0
+Comment peut-on marquer un point au football ? (Plusieurs reponses possibles)
+3
+1.00
+Un but classique
+1
+Un but contre son camp (CSC)
+1
+Un essai
+0
+Dans quelle equipe NBA joue Victor Wembanyama en 2026 ?
+2
+1.00
+Dallas Mavericks
+0
+San Antonio Spurs
+1
+Quelles sont les valeurs possibles d'un panier au basket ? (Plusieurs reponses possibles)
+4
+1.00
+1 point
+1
+2 points
+1
+3 points
+1
+5 points
+0
+Dans quelle ville evoluent les celebres Lakers ?
+3
+1.00
+New York
+0
+Chicago
+0
+Los Angeles
+1
+Quelles fautes peut-on commettre au basket ? (Plusieurs reponses possibles)
+4
+1.00
+Le marcher (marcher sans dribbler)
+1
+Le hors-jeu
+0
+Le retour en zone
+1
+Le double dribble
+1
+Pour quelle ecurie italienne (voiture rouge) pilote Lewis Hamilton en 2026 ?
+3
+1.00
+Mercedes
+0
+Ferrari
+1
+McLaren
+0
+Quels pilotes font partie de la grille F1 en 2026 ? (Plusieurs reponses possibles)
+4
+1.00
+Max Verstappen
+1
+Charles Leclerc
+1
+Andrea Kimi Antonelli
+1
+Michael Schumacher
+0
+Quel pilote francais court chez Alpine avec le numero 10 ?
+3
+1.00
+Pierre Gasly
+1
+Charles Leclerc
+0
+Esteban Ocon
+0
+Quelles couleurs trouve-t-on sur les drapeaux de course ? (Plusieurs reponses possibles)
+4
+1.00
+Jaune (danger)
+1
+Vert (piste libre)
+1
+Rose (pluie)
+0
+Rouge (arret de course)
+1
+Quel tournoi se joue sur terre battue a Paris en ce moment (mai) ?
+2
+1.00
+Open d'Australie
+0
+Roland-Garros
+1
+Quelles surfaces sont utilisees en Grand Chelem ? (Plusieurs reponses possibles)
+4
+1.00
+Terre battue
+1
+Gazon
+1
+Dur (synthetique)
+1
+Parquet
+0
+Comment gagne-t-on un point au tennis ? (Plusieurs reponses possibles)
+4
+1.00
+Un Ace
+1
+La balle de l'adversaire sort des limites
+1
+La balle touche le filet et tombe du bon cote
+1
+Faire tomber la raquette adverse
+0
+Quel joueur serbe detient le record de victoires en Grand Chelem ?
+3
+1.00
+Rafael Nadal
+0
+Roger Federer
+0
+Novak Djokovic
+1
+Quelles medailles Leon Marchand a-t-il gagnees a Paris 2024 ? (Plusieurs reponses possibles)
+4
+1.00
+400m 4 nages (Or)
+1
+200m Brasse (Or)
+1
+200m Papillon (Or)
+1
+100m Dos (Or)
+0
+Quelles sont les nages officielles en competition ? (Plusieurs reponses possibles)
+4
+1.00
+Le Crawl
+1
+La Brasse
+1
+Le Papillon
+1
+La nage en apnee
+0
+Quelle est la longueur d'un grand bassin olympique ?
+4
+1.00
+25 metres
+0
+50 metres
+1
+100 metres
+0
+75 metres
+0
+Combien de personnes nagent dans un relais classique ?
+4
+1.00
+2 nageurs
+0
+3 nageurs
+0
+4 nageurs
+1
+5 nageurs
+0

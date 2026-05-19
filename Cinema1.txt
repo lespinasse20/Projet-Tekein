@@ -1,0 +1,188 @@
+20 0 1 0
+Cinema
+Quel est le nom du heros du Roi Lion ?
+3
+1.00
+Mufasa
+0
+Scar
+0
+Simba
+1
+Quel heros est mordu par une araignee ?
+2
+1.00
+Batman
+0
+Spiderman
+1
+Quelle est la maison d'Harry Potter ?
+4
+1.00
+Serpentard
+0
+Serdaigle
+0
+Gryffondor
+1
+Poufsouffle
+0
+Qui joue James Bond dans Skyfall ?
+3
+1.00
+Daniel Craig
+1
+Brad Pitt
+0
+Tom Cruise
+0
+Dans quel film un paquebot coule dans le pacifique ?
+4
+1.00
+Titanic
+1
+Nemo
+0
+Alien
+0
+Jaws
+0
+Qui est le compagnon poilu de Han Solo ?
+3
+1.00
+Yoda
+0
+R2D2
+0
+Chewbacca
+1
+Quel film montre des jouets vivants ?
+4
+1.00
+Cars
+0
+Toy Story
+1
+Shrek
+0
+Bolt
+0
+Quel est le prenom du garcon oublie chez lui ?
+3
+1.00
+Kevin
+1
+Tom
+0
+Sam
+0
+Qui est la star de Mission Impossible ?
+2
+1.00
+Will Smith
+0
+Tom Cruise
+1
+Qui perd son soulier de verre ?
+3
+1.00
+Elsa
+0
+Cendrillon
+1
+Belle
+0
+Quel est le robot jaune des Transformers ?
+4
+1.00
+Optimus
+0
+Wall-E
+0
+Bumblebee
+1
+R2
+0
+Quels animaux voit-on dans Jurassic Park ?
+3
+1.00
+Lions
+0
+Dinosaures
+1
+Ours
+0
+Quel ogre vert voyage avec un ane ?
+3
+1.00
+Shrek
+1
+Hulk
+0
+Nemo
+0
+Quel est le navire de Jack Sparrow ?
+2
+1.00
+Black Pearl
+1
+Pearl
+0
+Quelle actrice joue Barbie en 2023 ?
+2
+1.00
+Margot Robbie
+1
+Jenna Ortenga
+0
+Quel instrument magique utilise Coco ?
+4
+1.00
+Piano
+0
+Guitare
+1
+Harpe
+0
+Flute
+0
+Quelle est la passion des Tuche ?
+3
+1.00
+Pates
+0
+Frites
+1
+Pizza
+0
+Quel heros rouge court tres vite ?
+3
+1.00
+Flash
+1
+Thor
+0
+Hulk
+0
+Quel film met en scene Elsa et Anna ?
+4
+1.00
+Rebelle
+0
+La Reine des Neiges
+1
+Vaiana
+0
+La-Haut
+0
+Dans quel pays vit Amelie Poulain ?
+4
+1.00
+Italie
+0
+France
+1
+Japon
+0
+USA
+0
