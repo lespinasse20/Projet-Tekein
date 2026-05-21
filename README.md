@@ -34,7 +34,7 @@ Le projet est découpé de manière modulaire afin de séparer les structures de
 
 ---
 
-## 🛠️ Compilation et Exécution sous Windows (Sans Code::Blocks)
+## 🛠️ Compilation et Exécution sous Windows
 
 Pour compiler et lancer le projet directement depuis l'invite de commandes Windows en utilisant le compilateur de Code::Blocks, suivez scrupuleusement ces étapes :
 
@@ -52,29 +52,46 @@ set PATH=%PATH%;C:\Program Files\CodeBlocks\MinGW\bin
 Lancez la compilation automatisée en exécutant la commande suivante :
 mingw32-make
 
-Le Makefile va ainsi générer les fichiers objets nécessaires et créer l'exécutable final nommé "projet_teiken".
-
 ### Étape 4 : Lancer l'application
 Pour exécuter votre programme, tapez simplement son nom dans la console et validez :
 projet_teiken
 
 ---
 
+## 🐧 Compilation et Exécution sous Linux
+
+Si vous êtes sous Linux, ouvrez un terminal dans le dossier du projet et utilisez l'une des deux méthodes suivantes :
+
+* **Avec le Makefile :**
+  make
+
+* **Manuellement avec GCC :**
+  gcc main.c fonctions.c -o projet_teiken
+
+Pour lancer l'application après la compilation, tapez :
+./projet_teiken
+
+---
+
 ## 🧹 Commandes de Nettoyage utiles
 
-Le Makefile intègre une règle de nettoyage automatique pour vider les fichiers temporaires et l'ancien exécutable.
+Le Makefile intègre une règle de nettoyage automatique pour vider les fichiers objets temporaires (.o) et l'ancien exécutable.
 
 * Pour tout nettoyer proprement sous Windows :
   mingw32-make clean
+
+* Pour tout nettoyer proprement sous Linux :
+  make clean
+
 * Pour recompiler à neuf immédiatement après un nettoyage :
-  mingw32-make
+  mingw32-make (Windows) ou make (Linux)
 
 ---
 
 ## 💾 Emplacement des fichiers QCM (.txt)
-Lorsque vous compilez manuellement avec le Makefile, l'exécutable projet_teiken.exe est créé directement à la racine de votre dossier de travail. 
+Lorsque vous compilez manuellement avec le Makefile, l'exécutable projet_teiken est créé directement à la racine de votre dossier de travail. 
 
-IMPORTANT : Pour que vos questionnaires existants soient visibles dans le mode Étudiant, assurez-vous que vos fichiers de QCM (ex: Histoire.txt) soient situés dans le même dossier que l'exécutable projet_teiken.exe (à la racine de votre dossier de projet), et non cachés ou restés dans le sous-dossier bin/Debug de Code::Blocks.
+IMPORTANT : Pour que vos questionnaires existants soient visibles dans le mode Étudiant, assurez-vous que vos fichiers de QCM (ex: Histoire.txt) soient situés dans le même dossier que l'exécutable projet_teiken (à la racine de votre dossier de projet), et non cachés ou restés dans le sous-dossier bin/Debug de Code::Blocks.
 
 ---
 
