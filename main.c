@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "structures.h"
 
-// Prototypes des fonctions principales
+// Prototypes des modes
 void mode_enseignant();
 void mode_etudiant();
 
@@ -14,18 +14,17 @@ int main() {
         printf("\nChoisissez votre mode:\n");
         printf("\n1. Enseignant\n2. Etudiant\n3. Quitter\n\nChoix : ");
 
-        // Étape 1 : On tente de lire l'entier
+        // Lecture du choix et securite si l'utilisateur met des lettres
         if (scanf("%d", &choix) != 1) {
-            while(getchar() != '\n'); // Sécurité : vide le buffer complet si l'utilisateur a tapé des lettres
+            while(getchar() != '\n');
             printf("Erreur : Votre chiffre est invalide, veuilliez ressayer.\n");
             continue;
         }
 
-        // Étape 2 : CORRECTION IMPÉRATIVE
-        // On nettoie systématiquement la touche 'Entrée' (\n) laissée par le scanf valide
+        // Nettoyage du retour a la ligne restant dans le buffer
         while(getchar() != '\n');
 
-        // Étape 3 : On aiguille vers le bon mode avec un buffer d'entrée tout propre
+        // Aiguillage vers le mode choisi
         switch (choix) {
             case 1:
                 mode_enseignant();
