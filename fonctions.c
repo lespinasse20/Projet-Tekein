@@ -9,10 +9,11 @@ char mot_de_passe_actuel[20] = MDP;
 
 void vider_buffer() {
     int c;
+    // Boucle de nettoyage
     while((c = getchar()) != '\n' && c != EOF);
 }
 
-void saisir_chaine_securisee(char *destination, int tailleMax) {
+void saisir_chaine_securisee(char *destination, int taille_maximum) {
     char texte[500];
     int reussite = 0;
     while (!reussite) {
@@ -20,8 +21,8 @@ void saisir_chaine_securisee(char *destination, int tailleMax) {
         if (fgets(texte, sizeof(texte), stdin)) {
             texte[strcspn(texte, "\n")] = 0;
             // Verifications de la taille de caractere
-            if (strlen(texte) >= tailleMax) {
-                printf("Erreur : La taille est depassee (max %d car.). Veuillez reessayez : ", tailleMax - 1);
+            if (strlen(texte) >= taille_maximum) {
+                printf("Erreur : La taille est depassee (max %d car.). Veuillez reessayez : ", taille_maximum - 1);
             } else if (strlen(texte) == 0) {
                 printf("Erreur : La taille ne peut pas etre vide. Veuillez reessayez : ");
             } else {
@@ -47,15 +48,15 @@ void afficher_liste_fichier() {
         while ((lecture = readdir(dossier_qcm)) != NULL) {
             char *position_point = strrchr(lecture->d_name, '.');
             if (position_point && strcmp(position_point, ".txt") == 0) {
-                FILE* test_F = fopen(lecture->d_name, "r");
-                if (test_F) {
+                FILE* test_fichier = fopen(lecture->d_name, "r");
+                if (test_fichier) {
                     char poubelle[100];
                     char nom_categorie[40] = "Inconnue";
                     // Skip de la ligne 1 pour avoir la categorie en ligne 2
-                    if (fgets(poubelle, sizeof(poubelle), test_F) && fgets(nom_categorie, sizeof(nom_categorie), test_F)) {
+                    if (fgets(poubelle, sizeof(poubelle), test_fichier) && fgets(nom_categorie, sizeof(nom_categorie), test_fichier)) {
                         nom_categorie[strcspn(nom_categorie, "\n")] = 0;
                     }
-                    fclose(test_F);
+                    fclose(test_fichier);
 
                     // Check doublon pour pas l'ajouter deux fois
                     int existe = 0;
@@ -89,18 +90,18 @@ void afficher_liste_fichier() {
                 while ((lecture = readdir(dossier_qcm)) != NULL) {
                     char *position_point = strrchr(lecture->d_name, '.');
                     if (position_point && strcmp(position_point, ".txt") == 0) {
-                        FILE* test_F = fopen(lecture->d_name, "r");
-                        if (test_F) {
+                        FILE* test_fichier = fopen(lecture->d_name, "r");
+                        if (test_fichier) {
                             char poubelle[100];
-                            char cat_verification[40] = "";
+                            char categorie_verif[40] = "";
                             // Verif si le fichier correspond bien a la categorie en cours
-                            if (fgets(poubelle, sizeof(poubelle), test_F) && fgets(cat_verification, sizeof(cat_verification), test_F)) {
-                                cat_verification[strcspn(cat_verification, "\n")] = 0;
+                            if (fgets(poubelle, sizeof(poubelle), test_fichier) && fgets(categorie_verif, sizeof(categorie_verif), test_fichier)) {
+                                categorie_verif[strcspn(categorie_verif, "\n")] = 0;
                             }
-                            fclose(test_F);
+                            fclose(test_fichier);
 
                             // Affichage propre sans le .txt
-                            if (strcmp(cat_verification, liste_categories[i]) == 0) {
+                            if (strcmp(categorie_verif, liste_categories[i]) == 0) {
                                 char nom_affichage[256];
                                 strcpy(nom_affichage, lecture->d_name);
                                 nom_affichage[position_point - lecture->d_name] = '\0';
@@ -140,10 +141,11 @@ float saisir_flottant(float minimum, float maximum) {
 void sauvegarder_qcm(qcm *q) {
     // Creation ou ecrasement du fichier txt
     FILE* f = fopen(q->nom_du_qcm, "w");
-    if (f == NULL) return;
+    if (f == NULL) {
+        return;
+    }
     // Ligne 1 : config du qcm
-    fprintf(f, "%d %d %d %d\n", q->nombre_de_question,
-            q->config.points_negatif, q->config.mode_sequentiel, q->config.multi_reponse);
+    fprintf(f, "%d %d %d %d\n", q->nombre_de_question,q->config.points_negatif, q->config.mode_sequentiel, q->config.multi_reponse);
     // Ligne 2 : theme du qcm
     fprintf(f, "%s\n", q->categorie);
     // Boucle blocs questions (enonce, prop, reponses)
@@ -156,25 +158,24 @@ void sauvegarder_qcm(qcm *q) {
     fclose(f);
 }
 
-qcm charger_qcm(char nomFichier[]) {
+qcm charger_qcm(char nom_fichier[]) {
     qcm q;
     // Ouverture en lecture seule
-    FILE* f = fopen(nomFichier, "r");
+    FILE* f = fopen(nom_fichier, "r");
     if (f == NULL) {
         strcpy(q.nom_du_qcm, "ERREUR");
         return q;
     }
     // Recuperation de la config en ligne 1
-    fscanf(f, "%d %d %d %d\n", &q.nombre_de_question,
-               &q.config.points_negatif, &q.config.mode_sequentiel, &q.config.multi_reponse);
-
-    if (fgets(q.categorie, sizeof(q.categorie), f))
+    fscanf(f, "%d %d %d %d\n", &q.nombre_de_question,&q.config.points_negatif, &q.config.mode_sequentiel, &q.config.multi_reponse);
+    if (fgets(q.categorie, sizeof(q.categorie), f)){
         q.categorie[strcspn(q.categorie, "\n")] = 0;
-
+    }
     // Chargement de toutes les questions
     for (int i = 0; i < q.nombre_de_question; i++) {
-        if (fgets(q.liste_questions[i].enonce, MAX_CHAINE, f))
+        if (fgets(q.liste_questions[i].enonce, MAX_CHAINE, f)){
             q.liste_questions[i].enonce[strcspn(q.liste_questions[i].enonce, "\n")] = 0;
+        }
         // Recup du nombre de choix possibles
         fscanf(f, "%d\n", &q.liste_questions[i].nb_propositions);
         fscanf(f, "%f\n", &q.liste_questions[i].points);
@@ -186,7 +187,7 @@ qcm charger_qcm(char nomFichier[]) {
         }
     }
     fclose(f);
-    strcpy(q.nom_du_qcm, nomFichier);
+    strcpy(q.nom_du_qcm, nom_fichier);
     return q;
 }
 
@@ -218,9 +219,12 @@ void mode_enseignant() {
             vider_buffer();
 
             // Si l'utilisateur met pas le .txt on le rajoute nous meme
-            if (strcmp(actuel.nom_du_qcm, "0") == 0) continue;
-            if (strstr(actuel.nom_du_qcm, ".txt") == NULL) strcat(actuel.nom_du_qcm, ".txt");
-
+            if (strcmp(actuel.nom_du_qcm, "0") == 0){
+                continue;
+            }
+            if (strstr(actuel.nom_du_qcm, ".txt") == NULL){
+                strcat(actuel.nom_du_qcm, ".txt");
+            }
             printf("Categorie du QCM (ex: Informatique, Histoire...) : ");
             saisir_chaine_securisee(actuel.categorie, 40);
 
@@ -239,10 +243,8 @@ void mode_enseignant() {
                 printf("\n--- Question %d ---\n", i+1);
                 printf("Contenue de l'enonce (max 100 car.) : ");
                 saisir_chaine_securisee(actuel.liste_questions[i].enonce, MAX_CHAINE);
-
                 printf("Nombre de points pour cette question (ex: 1.00 ou 2.50) : ");
                 actuel.liste_questions[i].points = saisir_flottant(0.1, 20.0);
-
                 printf("Combien de propositions (2 a 4) ? ");
                 actuel.liste_questions[i].nb_propositions = saisir_entier(2, 4);
                 for (int j = 0; j < actuel.liste_questions[i].nb_propositions; j++) {
@@ -261,12 +263,18 @@ void mode_enseignant() {
             afficher_liste_fichier();
             printf("Nom du QCM a supprimer (ou '0' pour revenir au mode enseignant) : ");
             scanf("%s", nom_supprimer);
-            if (strcmp(nom_supprimer, "0") == 0) continue;
-
-            if (strstr(nom_supprimer, ".txt") == NULL) strcat(nom_supprimer, ".txt");
+            if (strcmp(nom_supprimer, "0") == 0){
+                continue;
+            }
+            if (strstr(nom_supprimer, ".txt") == NULL){
+                strcat(nom_supprimer, ".txt");
+            }
             // Suppression du fichier texte
-            if (remove(nom_supprimer) == 0) printf("Supprime !\n");
-            else printf("Erreur : Le fichier est introuvable.\n");
+            if (remove(nom_supprimer) == 0) {
+                printf("Supprime !\n");
+            } else {
+                printf("Erreur : Le fichier est introuvable.\n");
+            }
         }
         else if (choix_prof == 3) {
             char nouveau[20], confirmation[20];
@@ -358,7 +366,9 @@ void mode_etudiant() {
                        q.config.mode_sequentiel ? "" : " ou Entree pour passer");
             }
 
-            if (!fgets(ligne, 100, stdin)) continue;
+            if (!fgets(ligne, 100, stdin)) {
+                continue;
+            }
             ligne[strcspn(ligne, "\n")] = 0;
 
             if (strlen(ligne) == 0) {
@@ -377,7 +387,9 @@ void mode_etudiant() {
             int nombre_coches = 0;
             // Check si le caractere tape est un chiffre valide
             for(int k = 0; ligne[k] != '\0'; k++) {
-                if (ligne[k] == ' ' || ligne[k] == '\t') continue;
+                if (ligne[k] == ' ' || ligne[k] == '\t'){
+                    continue;
+                }
                 int index = ligne[k] - '1';
                 if (index >= 0 && index < q.liste_questions[i].nb_propositions) {
                     reponses_eleve[index] = 1;
@@ -403,40 +415,48 @@ void mode_etudiant() {
 
         // Debut bareme et calcul des points
         if (!question_passee) {
-            int a_coche_une_erreur = 0;
-            int total_bonnes_reponses_possibles = 0;
-            int bonnes_reponses_trouvees_par_eleve = 0;
+            int coche_erreur = 0;
+            int tot_bonnes_rep_possibles = 0;
+            int bonnes_rep_trouvees_eleve = 0;
 
             // Comparaison choix eleve vs vraies reponses
             for (int j = 0; j < q.liste_questions[i].nb_propositions; j++) {
                 if (q.liste_questions[i].bonne_reponse[j] == 1) {
-                    total_bonnes_reponses_possibles++;
+                    tot_bonnes_rep_possibles++;
                     if (reponses_eleve[j] == 1) {
-                        bonnes_reponses_trouvees_par_eleve++;
+                        bonnes_rep_trouvees_eleve++;
                     }
                 } else {
                     if (reponses_eleve[j] == 1) {
-                        a_coche_une_erreur = 1;
+                        coche_erreur = 1;
                     }
                 }
             }
 
-            if (a_coche_une_erreur) {
-                if (q.config.mode_sequentiel == 0) printf("-> INCORRECT.\n");
+            if (coche_erreur) {
+                if (q.config.mode_sequentiel == 0) {
+                    printf("-> INCORRECT.\n");
+                }
                 if (q.config.points_negatif == 1) {
                     note_obtenue -= 1;
                 }
             }
-            else if (bonnes_reponses_trouvees_par_eleve == 0) {
-                if (q.config.mode_sequentiel == 0) printf("-> INCORRECT.\n");
+            else if (bonnes_rep_trouvees_eleve == 0) {
+                if (q.config.mode_sequentiel == 0) {
+                    printf("-> INCORRECT.\n");
+                }
             }
-            else if (bonnes_reponses_trouvees_par_eleve == total_bonnes_reponses_possibles) {
-                if (q.config.mode_sequentiel == 0) printf("-> CORRECT !\n");
+            else if (bonnes_rep_trouvees_eleve == tot_bonnes_rep_possibles) {
+                if (q.config.mode_sequentiel == 0) {
+                    printf("-> CORRECT !\n");
+                }
                 note_obtenue += q.liste_questions[i].points;
             }
             else {
-                float points_partiels = q.liste_questions[i].points * ((float)bonnes_reponses_trouvees_par_eleve / (float)total_bonnes_reponses_possibles);
-                if (q.config.mode_sequentiel == 0) printf("-> PARTIELLEMENT CORRECT ! (+%.2f pts)\n", points_partiels);
+                float points_partiels = q.liste_questions[i].points * ((float)bonnes_rep_trouvees_eleve / (float)tot_bonnes_rep_possibles);
+                if (q.config.mode_sequentiel == 0) {
+                    printf("-> PARTIELLEMENT CORRECT ! (+%.2f pts)\n", points_partiels);
+                }
                 note_obtenue += points_partiels;
             }
         }
